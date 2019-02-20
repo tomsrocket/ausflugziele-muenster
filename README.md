@@ -21,3 +21,5 @@ To run the server:
 
 Then try this Url:  http://localhost:1313/posts/
 
+# Ideas
+* Sleek theme for jekyll: https://jekyll-themes.com/sleek/  https://janczizikow.github.io/sleek/
