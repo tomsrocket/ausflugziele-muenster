@@ -2,7 +2,12 @@ const fs = require('fs');
 const md5 = require('md5');
 const readline = require('readline');
 const { google } = require('googleapis');
+var app = require("node-server-screenshot");
 
+
+var pageWidth = 800;
+var pageHeight = 600;
+        
 // If modifying these scopes, delete token.json.
 const SCOPES = ['https://www.googleapis.com/auth/spreadsheets.readonly'];
 // The file token.json stores the user's access and refresh tokens, and is
@@ -85,7 +90,7 @@ function getNewToken(oAuth2Client, callback) {
  * @see https://docs.google.com/spreadsheets/d/1BxiMVs0XRA5nFMdKvBdBZjgmUUqptlbs74OgvE2upms/edit
  * @param {google.auth.OAuth2} auth The authenticated Google OAuth client.
  */
-function listMajors(auth) {
+ function listMajors(auth) {
   const sheets = google.sheets({version: 'v4', auth});
   sheets.spreadsheets.values.get({
     spreadsheetId: spreadsheetId,
@@ -117,7 +122,7 @@ function listMajors(auth) {
           const categories = row[3].split(", ");
           const desc = row[6];
           const mdfive = md5(row[0]);
-          const slug = title.toLowerCase().replace(" ", "-");
+          const slug = title.toLowerCase().replace(/[^\w\d]+/g, "-");
           
           const categoryString = categories.join('", "')
 
@@ -130,7 +135,7 @@ title: "${title}"
 date: ${isoDate}
 publishdate: ${isoDate}
 lastmod: ${isoDate}
-image: "/images/${slug}.jpg"
+image: "/images/posts/${slug}.png"
 tags: ["${categoryString}"]
 type: "post"
 comments: false
@@ -147,7 +152,7 @@ ${addr}
 
           const filename = slug + ".md"
           
-          const outputFile = "../content/blog/" + filename;
+          const outputFile = "../content/posts/" + filename;
           fs.writeFile(outputFile, content, function(err) {
             if(err) {
                 return console.log(err);
@@ -155,6 +160,25 @@ ${addr}
             const filestats = fs.statSync(outputFile);
             console.log("The file was saved:", outputFile, "size:", filestats.size);
           }); 
+
+             
+          const address = url;
+          var output = "../static/images/posts/" + slug + ".png";
+          
+          var fileSizeInBytes = 0;
+          if (fs.existsSync(output)) {
+              const stats = fs.statSync(output);
+              fileSizeInBytes = stats.size; 
+          }
+          if (fileSizeInBytes > 50) {
+              
+              // screenshot is alread there
+              console.log("skipping", address, output);
+          } else {
+
+              // generate screenshot
+              loadPage(address, output);        
+          } 
           
         }
       });
@@ -165,28 +189,20 @@ ${addr}
       console.log('No data found.');
     }
   });
-
-
 }
 
 
 
-
-
-        
 function loadPage(address, output)
 {
     console.log("Processing", address);
-    
-    return new Promise(function(resolve, reject) {
- 
+
         app.fromURL(address, output, {
             width: pageWidth,
             height: pageHeight, 
         }, function(){
             //an image of google.com has been saved at ./test.png
             console.log("wrote " + output);
-            resolve();
         });
-    });
+
 }

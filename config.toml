@@ -1,9 +1,9 @@
 baseURL = "http://example.org/"
-languageCode = "en-us"
-title = "My New Hugo Site"
+languageCode = "de-de"
+title = "Münster Guru - Wochenend-Tipps"
 theme = "mediumish-gohugo-theme"
 summaryLength = 25
-copyright = "John Doe - All rights reserved"
+copyright = "Thomas Werner"
 disqusShortname = "shortDisquis"
 googleAnalytics = "UA-1XXXXXXX1-X"
 [params.index]
