@@ -1,0 +1,32 @@
+{
+  "name": "spass-mit-daten",
+  "version": "1.0.0",
+  "description": "Dieses Repository enthält den Code für die Open Data Linkliste auf spassmitdaten.de.",
+  "main": "read-google-spreadsheet.js",
+  "dependencies": {
+    "fs": "0.0.1-security",
+    "googleapis": "^27.0.0",
+    "md5": "^2.2.1",
+    "node-server-screenshot": "^0.2.1",
+    "sharp": "^0.21.3"
+  },
+  "devDependencies": {
+    "nanogen": "^0.4.2"
+  },
+  "scripts": {
+    "start": "nanogen start",
+    "build": "node read-google-spreadsheet.js;npx nanogen build;mkdir public/screens;cp screenshots/small/* public/screens",
+    "generate-previews": "node generate-website-previews.js; node generate-thumbnails.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/tomsrocket/spass-mit-daten.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/tomsrocket/spass-mit-daten/issues"
+  },
+  "homepage": "https://github.com/tomsrocket/spass-mit-daten#readme"
+}

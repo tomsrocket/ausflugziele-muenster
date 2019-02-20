@@ -1,0 +1,16 @@
+baseURL = "http://example.org/"
+languageCode = "en-us"
+title = "My New Hugo Site"
+theme = "mediumish-gohugo-theme"
+summaryLength = 25
+copyright = "John Doe - All rights reserved"
+disqusShortname = "shortDisquis"
+googleAnalytics = "UA-1XXXXXXX1-X"
+[params.index]
+  picture = "/images/author.jpg"
+  title = "John Doe"
+  subtitle = "I'm a unique placeholder. Working here and there!"
+  mdtext = '''Currently trying to get this blog running, still don't know what the blog will be about!\
+**This textblock is a demonstration of the mdtext-param.**\
+### This is a markdown heading'''
+  alertbar = true
