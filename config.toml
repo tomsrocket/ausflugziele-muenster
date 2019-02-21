@@ -1,16 +1,56 @@
 baseURL = "http://example.org/"
-languageCode = "de-de"
-title = "Münster Guru - Wochenend-Tipps"
+languageCode = "en-us"
+title = "Münster.Jetzt"
 theme = "mediumish-gohugo-theme"
 summaryLength = 25
-copyright = "Thomas Werner"
-disqusShortname = "shortDisquis"
-googleAnalytics = "UA-1XXXXXXX1-X"
+copyright = "John Doe - All rights reserved"
+enableEmoji = true
+publishDir = "docs"
+#disqusShortname = "your-shortname-here"
+#googleAnalytics = "UA-1XXXXXXX1-1"
+
+[params]
+  logo = "/images/logo.png"
+  description ="the clean blog!"
+  #mailchimp = "you can provide a mailchimp-link here"
+
+[params.author]
+  name = "John Doe"
+  thumbnail = "/images/author.png"
+  description = "Creator of this blog."
+
 [params.index]
-  picture = "/images/author.jpg"
+  picture = "/images/author.png"
   title = "John Doe"
   subtitle = "I'm a unique placeholder. Working here and there!"
-  mdtext = '''Currently trying to get this blog running, still don't know what the blog will be about!\
+  mdtext = '''
+Currently trying to get this blog running, still don't know what the blog will be about!\
 **This textblock is a demonstration of the mdtext-param.**\
-### This is a markdown heading'''
-  alertbar = true
+### This is a markdown heading
+'''
+  alertbar = false
+
+[params.social]
+  github = "tomsrocket"
+  linkedin = "<username>"
+  xing = "<username>"
+#medium = "<username>"
+  twitter = "toms_rocket"
+
+## Main Menu
+[[menu.main]]
+    name = "Ausflugsziele"
+    weight = 100
+    identifier = "posts"
+    url = "/posts"
+[[menu.main]]
+    name = "Hintergründe"
+    identifier = "about"
+    weight = 200
+    url = "/"
+[[menu.main]]
+    name = "Impressum"
+    identifier = "imprint"
+    weight = 200
+    url = "/static/imprint"
+

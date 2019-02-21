@@ -116,7 +116,7 @@ function getNewToken(oAuth2Client, callback) {
         if (row[4]) {
           const title = row[2];
           const addr = row[4];
-          const keyw = row[5];
+          const keywords = row[5].split(", ");
           const date = row[0];
           const url = row[1];
           const categories = row[3].split(", ");
@@ -124,7 +124,7 @@ function getNewToken(oAuth2Client, callback) {
           const mdfive = md5(row[0]);
           const slug = title.toLowerCase().replace(/[^\w\d]+/g, "-");
           
-          const categoryString = categories.join('", "')
+          const categoryString = categories.join('", "') + '", "' + keywords.join('", "');
 
           const parts = date.match(/(\d+)/g);
           const jsDate = new Date(parts[2], parts[1]-1, parts[0]);
@@ -140,7 +140,6 @@ tags: ["${categoryString}"]
 type: "post"
 comments: false
 ---
-# ${title}
 ${desc}
 
 ## Internetadresse
