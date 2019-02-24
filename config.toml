@@ -1,56 +1,60 @@
 baseURL = "http://example.org/"
 languageCode = "en-us"
-title = "Münster.Jetzt"
+title = "Freizeit-Kompass Münster"
 theme = "mediumish-gohugo-theme"
+#theme = "ananke"
 summaryLength = 25
 copyright = "John Doe - All rights reserved"
 enableEmoji = true
 publishDir = "docs"
 #disqusShortname = "your-shortname-here"
 #googleAnalytics = "UA-1XXXXXXX1-1"
-
+Paginate=20
 [params]
   logo = "/images/logo.png"
-  description ="the clean blog!"
+  description ="Ausflugsideen für die ganze Familie"
   #mailchimp = "you can provide a mailchimp-link here"
 
 [params.author]
-  name = "John Doe"
+  name = "Thomas Werner"
   thumbnail = "/images/author.png"
   description = "Creator of this blog."
 
 [params.index]
-  picture = "/images/author.png"
-  title = "John Doe"
-  subtitle = "I'm a unique placeholder. Working here and there!"
+  picture = "/images/intro.jpg"
+  title = "Freizeit-Kompass Münster"
+  subtitle = "Unternehmungs-Tipps gegen Langeweile an münsteraner Wochenenden"
   mdtext = '''
 Currently trying to get this blog running, still don't know what the blog will be about!\
 **This textblock is a demonstration of the mdtext-param.**\
-### This is a markdown heading
+### Wähle eine Kategorie:
 '''
   alertbar = false
 
 [params.social]
   github = "tomsrocket"
-  linkedin = "<username>"
-  xing = "<username>"
-#medium = "<username>"
+
   twitter = "toms_rocket"
 
 ## Main Menu
 [[menu.main]]
     name = "Ausflugsziele"
     weight = 100
-    identifier = "posts"
-    url = "/posts"
+    identifier = "Ausflugsziele"
+    url = "/ausflugsziele"
 [[menu.main]]
-    name = "Hintergründe"
+    name = "Blog"
     identifier = "about"
     weight = 200
     url = "/"
 [[menu.main]]
+    name = "Kategorien"
+    weight = 100
+    identifier = "tags"
+    url = "/tags"    
+[[menu.main]]
     name = "Impressum"
-    identifier = "imprint"
+    identifier = "impressum"
     weight = 200
-    url = "/static/imprint"
+    url = "/static/impressum"
 
