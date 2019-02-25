@@ -23,10 +23,8 @@ Paginate=20
 [params.index]
   picture = "/images/intro.jpg"
   title = "Freizeit-Kompass Münster"
-  subtitle = "Unternehmungs-Tipps gegen Langeweile an münsteraner Wochenenden"
+  subtitle = "Unternehmungs-Tipps gegen Langeweile an (verregneten) Wochenenden"
   mdtext = '''
-Currently trying to get this blog running, still don't know what the blog will be about!\
-**This textblock is a demonstration of the mdtext-param.**\
 ### Wähle eine Kategorie:
 '''
   alertbar = false
@@ -41,12 +39,12 @@ Currently trying to get this blog running, still don't know what the blog will b
     name = "Ausflugsziele"
     weight = 100
     identifier = "Ausflugsziele"
-    url = "/ausflugsziele"
+    url = "/posts"
 [[menu.main]]
     name = "Blog"
     identifier = "about"
     weight = 200
-    url = "/"
+    url = "/blog"
 [[menu.main]]
     name = "Kategorien"
     weight = 100
