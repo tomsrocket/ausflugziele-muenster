@@ -1,0 +1,31 @@
+{{ define "header"}}
+    {{- partial "_shared/navbar.html" . -}}
+{{ end }}
+
+{{ define "main" }}
+    {{- partial "_shared/title.html" . -}}
+    <div class="main-content">
+        <!-- Posts Index
+        ================================================== -->
+        <section class="recent-posts">            
+            <div class="section-title">
+                    {{ if eq .Title "Blogs" }}{{ else if eq .Title "Tags" }} <h2><span>Liste der Kategorien:</span></h2>{{ else }}         
+                <h2><span>{{ if eq .Title "Posts" }}Alle Ergebnisse{{ else }}Kategorie "{{ .Title }}"{{ end }}:</span></h2>                
+            {{ end }}
+            </div>            
+            <div class="row listrecent">
+                {{ $post_paginator := .Paginate (.Pages) 12 }}
+                {{ range $post_paginator.Pages }}
+                    {{- partial "list-partials/postbox.html" . -}}
+                {{end}}
+            </div>
+        </section>
+        {{- partial "list-partials/pagination.html" $post_paginator -}}
+    </div>
+    {{- partial "_shared/alertbar.html" . -}}
+{{ end }}
+
+{{ define "footer"}}
+    {{- partial "_shared/jumbotron.html" . -}}
+    {{- partial "_shared/footer.html" . -}}
+{{ end }}

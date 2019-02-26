@@ -1,7 +1,7 @@
 baseURL = "http://example.org/"
 languageCode = "en-us"
 title = "Freizeit-Kompass Münster"
-theme = "mediumish-gohugo-theme"
+theme = "ms-theme"
 #theme = "ananke"
 summaryLength = 25
 copyright = "John Doe - All rights reserved"
@@ -50,9 +50,5 @@ Paginate=20
     weight = 100
     identifier = "tags"
     url = "/tags"    
-[[menu.main]]
-    name = "Impressum"
-    identifier = "impressum"
-    weight = 200
-    url = "/static/impressum"
+
 
