@@ -6,19 +6,19 @@
     {{ if gt .TotalPages 1 }}
       <div class="pagination">
         {{ if .HasPrev }}
-          <a class="ml-1 mr-1" href="{{.Prev.URL}}">&laquo; Prev</a>
+          <a class="ml-1 mr-1" href="{{.Prev.URL}}">&laquo; Vor</a>
           <a class="ml-1 mr-1" href="{{.Prev.URL}}">{{ .Prev.PageNumber }}</a>
         {{ else }}
-          <span>&laquo; Prev</span>
+          <span>&laquo; Vor</span>
         {{ end }}
 
         <span class="ml-1 mr-1">{{ .PageNumber }}</span>
 
         {{ if .HasNext }}
           <a class="ml-1 mr-1" href="{{.Next.URL}}">{{ .Next.PageNumber }}</a>
-          <a class="ml-1 mr-1" href="{{.Next.URL}}">Next &raquo;</a>
+          <a class="ml-1 mr-1" href="{{.Next.URL}}">Nächste &raquo;</a>
         {{ else }}
-          <span>Next &raquo;</span>
+          <span>Nächste &raquo;</span>
         {{ end }}
       </div>
     {{ end }}
