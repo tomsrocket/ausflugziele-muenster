@@ -24,9 +24,10 @@ E-Mail:
 <br />
 <p><strong>Bildrechte:</strong>
 <ul>
-    <li>Bilder: <a href="https://gratisography.com/">gratisography.com</a></li>
-    <li>Logo Icon: Smile by Gregor Cresnar from the Noun Project - <a href="https://thenounproject.com/search/?q=smile&amp;i=770810" rel="nofollow">https://thenounproject.com/search/?q=smile&amp;i=770810</a></li>
-    <li>Logo Font: Jomhuria by KB Studio Principal design - <a href="https://fonts.google.com/specimen/Jomhuria" rel="nofollow">https://fonts.google.com/specimen/Jomhuria</a></li>
+    <li>Bilder: <a href="https://unsplash.com">unsplash.com</a> (@insungyoon)</li>
+    <li>Logo Icon: monkey face By Oksana Latysheva, UA - <a href="https://thenounproject.com/search/?q=718956&i=718956" rel="nofollow">https://thenounproject.com/search/?q=718956&i=718956</a></li>
+    <li>Schriftart: Leckerli One von Gesine Todt <a href="https://fonts.google.com/specimen/Leckerli+One">https://fonts.google.com/specimen/Leckerli+One</a></li>
+    <li>Hintergrund: <a href="https://www.toptal.com/designers/subtlepatterns/">Subltepatterns.com</a></li>
 </ul>
 </p>
 <br /><br />

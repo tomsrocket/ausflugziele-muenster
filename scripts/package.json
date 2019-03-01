@@ -14,9 +14,9 @@
     "nanogen": "^0.4.2"
   },
   "scripts": {
-    "start": "nanogen start",
-    "build": "node read-google-spreadsheet.js;npx nanogen build;mkdir public/screens;cp screenshots/small/* public/screens",
-    "generate-previews": "node generate-website-previews.js; node generate-thumbnails.js"
+    "dev": "cd ..;hugo serve",
+    "generate": "node read-google-spreadsheet.js;node generate-thumbnails.js",
+    "build": "cd ..;hugo"
   },
   "repository": {
     "type": "git",

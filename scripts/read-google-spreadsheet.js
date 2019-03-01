@@ -122,9 +122,9 @@ function getNewToken(oAuth2Client, callback) {
           const categories = row[3].split(", ");
           const desc = row[6];
           const mdfive = md5(row[0]);
-          const slug = title.toLowerCase().replace(/[^\w\d]+/g, "-");
+          const slug = title.toLowerCase().replace(/[^üöäßÄÖÜ\w\d]+/g, "-");
           
-          const categoryString = categories.join('", "') + '", "' + keywords.join('", "');
+          const categoryString = categories.map(x => "Bei " + x).join('", "') + '", "' + keywords.join('", "');
 
           const parts = date.match(/(\d+)/g);
           const jsDate = new Date(parts[2], parts[1]-1, parts[0]);
@@ -136,6 +136,9 @@ date: ${isoDate}
 publishdate: ${isoDate}
 lastmod: ${isoDate}
 image: "/images/posts/${slug}.png"
+imageSmall: "/images/posts-small/${slug}.jpg"
+imageMid: "/images/posts-mid/${slug}.jpg"
+external: "${url}"
 tags: ["${categoryString}"]
 type: "post"
 comments: false

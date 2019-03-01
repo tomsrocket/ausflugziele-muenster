@@ -17,9 +17,10 @@ Vor diesem Problem standen wir einfach ein mal zu oft. Daher habe ich aus versch
 Daraus entstanden ist diese Webseite mit einer Liste an Unternehmungen im Münsterland, NRW und Niedersachsen. Es ist für jeden was dabei: Lehrreiche Museen, bewegungsreiche Abenteuerspielplätze, spaßige Vergnügungsparks. 
 
 Bitte beachte dabei folgende Dinge: 
-Teilweise sind die genannten Attraktionen nicht das ganze Jahr geöffnet! Bevor Du hinfährst, checke unbedingt die jeweils verlinkte Homepage. Insbesondere die Parks haben oft nur April bis Oktober geöffnet.
-Manche ausgefallene Sachen sind nicht ganz billig, Actionpainting mit der ganzen Familie kostet ca. 150€, auf die Preise sollte man also einen Blick werfen.
-Nicht alles kann man spontan machen, sondern muss vorher online buchen. Z.B. beim Schwarzlichtgolf.
+
+* Teilweise sind die genannten Attraktionen nicht das ganze Jahr geöffnet! Bevor Du hinfährst, checke unbedingt die jeweils verlinkte Homepage. Insbesondere die Parks haben oft nur April bis Oktober geöffnet.
+* Manche ausgefallene Sachen sind nicht ganz billig, Actionpainting mit der ganzen Familie kostet ca. 150€, auf die Preise sollte man also einen Blick werfen.
+* Nicht alles kann man spontan machen, sondern muss vorher online buchen. Z.B. beim Schwarzlichtgolf.
 
 Viel Spaß beim Stöbern, ich hoffe Du findest etwas schönes!
 
