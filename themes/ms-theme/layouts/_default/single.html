@@ -48,7 +48,9 @@
                         {{ .Content}}
                     </div>
                     
+                    {{ if $.Params.tags }}                    
                     <!-- Post Categories -->
+                    <h2>Tags:</h2>
                     <div class="after-post-tags">
                         <ul class="tags">
                         {{ range .Params.tags }}
@@ -58,12 +60,14 @@
                         {{ end }}
                         </ul>
                     </div>
+                    {{end}}
                     <!-- End Categories -->
             
 
                     <!-- Post Featured Image -->
                     {{with .Params.image}}
-                        <img class="featured-image img-fluid" src="{{ . | urlize | relURL }}" alt="thumbnail for this post">
+                        <h2>Bildschirmfoto:</h2>
+                        <a href="{{ $.Params.external }}" target="_blank"><img class="featured-image img-fluid" src="{{ . | urlize | relURL }}" alt="Zur Internetseite" /></a>
                     {{end}}
                     <!-- End Featured Image -->
                     

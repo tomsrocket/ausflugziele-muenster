@@ -3,7 +3,7 @@
     <div class="card h-100">
         <div class="maxthumb">
             <a href="{{ .URL }}">
-                {{with .Params.image}}
+                {{with .Params.imageSmall}}
                     <img class="img-fluid" src="{{ . | urlize | relURL }}" alt="A thumbnail image">
                 {{end}}                
             </a>

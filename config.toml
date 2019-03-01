@@ -11,7 +11,7 @@ publishDir = "docs"
 #googleAnalytics = "UA-1XXXXXXX1-1"
 Paginate=12
 [params]
-  logo = "/images/logo.png"
+  logo = "/images/logo-monkey.png"
   description ="Ausflugsideen für die ganze Familie"
   #mailchimp = "you can provide a mailchimp-link here"
 
