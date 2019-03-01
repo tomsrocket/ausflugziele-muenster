@@ -9,7 +9,7 @@ enableEmoji = true
 publishDir = "docs"
 #disqusShortname = "your-shortname-here"
 #googleAnalytics = "UA-1XXXXXXX1-1"
-Paginate=20
+Paginate=12
 [params]
   logo = "/images/logo.png"
   description ="Ausflugsideen für die ganze Familie"
@@ -39,12 +39,12 @@ Paginate=20
     name = "Ausflugsziele"
     weight = 100
     identifier = "Ausflugsziele"
-    url = "/posts"
+    url = "/"
 [[menu.main]]
-    name = "Blog"
+    name = "Über uns"
     identifier = "about"
     weight = 200
-    url = "/blog"
+    url = "/blog/ueber-diese-seite/"
 [[menu.main]]
     name = "Kategorien"
     weight = 100
