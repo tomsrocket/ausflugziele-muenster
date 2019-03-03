@@ -24,6 +24,11 @@
     text-align: center !important;
 }
 
+
+.tags a:hover, #tag-cloud a:hover {
+    color:#007b4b;
+    background-color: #9f9!important;
+}
 .tags a, #tag-cloud a {
     background-color: #afa;
     border-radius: 10px;
