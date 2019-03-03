@@ -11,11 +11,7 @@ Gereonstr. 28<br>
 </p>
 <p> <br>
 Telefon: 0251 74800348<br>
-E-Mail:
-<script type="text/javascript">
-    emailMe=('t' + 'o&#'+109 + ';' + '@' + 'i&#110;' + 'put'+(42-19)+'.&#100;e')
-    document.write('<a href="mailto:' + emailMe + '">' + emailMe + '</a>')
-</script>
+E-Mail: {{% encoded-email email="myemail@example.com" %}}
 <br><br />
 
 </p>

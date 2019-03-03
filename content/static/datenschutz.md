@@ -10,11 +10,7 @@ Gereonstr. 28<br>
 48145 Münster<br>
 Deutschland<br>
  <br>
-E-Mailadresse:
-<script>
-emailMe=('t' + 'o&#'+109 + ';' + '@' + 'i&#110;' + 'put'+(42-19)+'.&#100;e')
-document.write('<a href="mailto:' + emailMe + '">' + emailMe + '</a>')
-</script>
+E-Mailadresse: {{% encoded-email email="myemail@example.com" %}}
                 
 </span></p><h3 id="dsg-general-datatype">Arten der verarbeiteten Daten</h3><p>-	Bestandsdaten (z.B., Personen-Stammdaten, Namen oder Adressen).<br>
 -	Kontaktdaten (z.B., E-Mail, Telefonnummern).<br>
