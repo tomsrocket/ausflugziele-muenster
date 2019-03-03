@@ -5,8 +5,8 @@ const { google } = require('googleapis');
 var app = require("node-server-screenshot");
 
 
-var pageWidth = 800;
-var pageHeight = 600;
+var pageWidth = 1280;
+var pageHeight = 1024;
         
 // If modifying these scopes, delete token.json.
 const SCOPES = ['https://www.googleapis.com/auth/spreadsheets.readonly'];
