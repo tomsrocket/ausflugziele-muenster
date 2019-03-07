@@ -6,7 +6,7 @@ var app = require("node-server-screenshot");
 
 
 var pageWidth = 1280;
-var pageHeight = 1024;
+var pageHeight = 1380; // make longer screenshots so we can cut off the silly cookiehinweis
         
 // If modifying these scopes, delete token.json.
 const SCOPES = ['https://www.googleapis.com/auth/spreadsheets.readonly'];
