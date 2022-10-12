@@ -1,22 +1,22 @@
 {{ define "header"}}
-    {{- partial "_shared/navbar.html" . -}}
+{{- partial "_shared/navbar.html" . -}}
 {{ end }}
 
 {{ define "main" }}
-    {{- partial "_shared/title.html" . -}}
-    <div class="main-content">
-        <!-- Begin Article
+{{- partial "_shared/title.html" . -}}
+<div class="main-content">
+    <!-- Begin Article
         ================================================== -->
-        <div class="container">
-            <div class="row">
-                <!-- Post Share -->
-                <div class="col-md-2 pl-0">      
-                    {{- partial "single-partials/share.html" . -}}
-                </div>
-                <!-- Post -->                
-                <div class="col-md-9 flex-first flex-md-unordered">
-                    <div class="mainheading">
-                        <!-- Author Box
+    <div class="container">
+        <div class="row">
+            <!-- Post Share -->
+            <div class="col-md-2 pl-0">
+                {{- partial "single-partials/share.html" . -}}
+            </div>
+            <!-- Post -->
+            <div class="col-md-9 flex-first flex-md-unordered">
+                <div class="mainheading">
+                    <!-- Author Box
                         {{if isset .Site.Params.author "name"}}
                         {{if isset .Site.Params.author "thumbnail"}}
                         {{if isset .Site.Params.author "description"}}
@@ -32,70 +32,71 @@
                                     {{ dateFormat "Jan 2, 2006" .PublishDate }}
                                     <i class="far fa-clock clock"></i>
                                     {{ .ReadingTime }} min read
-                                </span>					
+                                </span>
                             </div>
-                        </div>			
-                        {{end}}	
+                        </div>
                         {{end}}
-                        {{end}}    
-                         -->	                    
-                        <!-- Post Title -->
-                        <h1 class="posttitle">{{ .Title }}</h1> 
-                    </div>
+                        {{end}}
+                        {{end}}
+                         -->
+                    <!-- Post Title -->
+                    <h1 class="posttitle">{{ .Title }}</h1>
+                </div>
 
-                    <!-- Post Content -->
-                    <div class="article-post">
-                        {{ .Content}}
-                    </div>
-                    
-                    {{ if $.Params.tags }}                    
-                    <!-- Post Categories -->
-                    <h2>Tags:</h2>
-                    <div class="after-post-tags">
-                        <ul class="tags">
+                <!-- Post Content -->
+                <div class="article-post">
+                    {{ .Content}}
+                </div>
+
+                {{ if $.Params.tags }}
+                <!-- Post Categories -->
+                <h2>Tags:</h2>
+                <div class="after-post-tags">
+                    <ul class="tags">
                         {{ range .Params.tags }}
                         <li>
-                        <a href="{{ "/tags/" | relLangURL }}{{ . | urlize }}">{{.}}</a>
+                            <a href="{{ " /tags/" | relLangURL }}{{ . | urlize }}">{{.}}</a>
                         </li>
                         {{ end }}
-                        </ul>
-                    </div>
-                    {{end}}
-                    <!-- End Categories -->
-            
+                    </ul>
+                </div>
+                {{end}}
+                <!-- End Categories -->
 
-                    <!-- Post Featured Image -->
-                    {{with .Params.image}}
-                        <h2>Bildschirmfoto:</h2>
-                        <a href="{{ $.Params.external }}" target="_blank"><img class="featured-image img-fluid" src="{{ . | urlize | relURL }}" alt="Zur Internetseite" /></a>
-                    {{end}}
-                    <!-- End Featured Image -->
-                    
-                    <!-- Next and PrevPage -->
-                    <div class="row PageNavigation d-flex justify-content-between font-weight-bold">
+
+                <!-- Post Featured Image -->
+                {{with .Params.image}}
+                <h2>Bildschirmfoto:</h2>
+                <a href="{{ $.Params.external }}" target="_blank"><img class="featured-image img-fluid"
+                        src="{{ . | urlize | relURL }}" alt="Zur Internetseite" /></a>
+                {{end}}
+                <!-- End Featured Image -->
+
+                <!-- Next and PrevPage -->
+                <div class="row PageNavigation d-flex justify-content-between font-weight-bold">
                     {{with .NextPage}}
-                        <a class="d-block col-md-6" href="{{.URL}}"> &laquo; {{.Title}}</a>
+                    <a class="d-block col-md-6" href="{{.Permalink}}"> &laquo; {{.Title}}</a>
                     {{end}}
                     {{with .PrevPage}}
-                        <a class="d-block col-md-6 text-lg-right" href="{{.URL}}">{{.Title}} &raquo;</a>
+                    <a class="d-block col-md-6 text-lg-right" href="{{.Permalink}}">{{.Title}} &raquo;</a>
                     {{end}}
                     <div class="clearfix"></div>
-                    </div>
-                    <!-- End Next and PrevPage -->
                 </div>
-                <!-- End Post -->
+                <!-- End Next and PrevPage -->
             </div>
+            <!-- End Post -->
         </div>
-        <!-- End Article
-        ================================================== -->
-        {{ if .Params.comments }}
-            {{- partial "single-partials/comments.html" . -}}
-        {{ end }}
     </div>
-    {{- partial "_shared/alertbar.html" . -}}
+    <!-- End Article
+        ================================================== -->
+    {{ if .Params.comments }}
+    {{- partial "single-partials/comments.html" . -}}
+    {{ end }}
+</div>
+{{- partial "_shared/alertbar.html" . -}}
 {{ end }}
 
 {{ define "footer"}}
-    {{- partial "_shared/jumbotron.html" . -}}
-    {{- partial "_shared/footer.html" . -}}
+{{- partial "_shared/jumbotron.html" . -}}
+{{- partial "_shared/footer.html" . -}}
 {{ end }}
