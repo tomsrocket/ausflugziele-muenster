@@ -1,2 +1,8 @@
 scripts/config/config.json
+scripts/config/config.deploy.sh
 scripts/node_modules
+static/images/posts
+static/images/posts-mid
+static/images/posts-small
+docs
+content/posts/*.md

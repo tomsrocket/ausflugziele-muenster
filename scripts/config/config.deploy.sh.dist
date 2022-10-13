@@ -1,0 +1,2 @@
+#!/usr/bin/bash
+REMOTE=user@server.remotehost:/home/user/path/to/webdir
