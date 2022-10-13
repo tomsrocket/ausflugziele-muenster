@@ -14,12 +14,24 @@ const jpgQuality = 65;
         const files = fs.readdirSync(testFolder + "/");
 
         for (let i = 0; i < files.length; i++) {
-            let file = files[i];
-            console.log("resizing to " + thumbnailWidth, file);
-            await convert(testFolder + "/" + file, testFolder + "-small/" + file.replace(".png", ".jpg"), { width: thumbnailWidth, height: 250 });
-            console.log("resizing to " + bigWidth, file);
+            const file = files[i];
+            const fileStat = fs.statSync(testFolder + "/" + file);
+            const imgBigTime = fileStat.mtime;
+            const thumbName = testFolder + "-small/" + file.replace(".png", ".jpg");
+
+            // only create thumbnail if thumb dont exist OR if big image file is newer than thumb
+            if (fs.existsSync(thumbName)) {
+                const thumbStat = fs.statSync(thumbName);
+                if (thumbStat.mtime > imgBigTime) {
+                    console.log("SKIP! Thumbnail exists or same image as big one:", file)
+                    continue;
+                }
+            }
+            console.log("# resizing to " + thumbnailWidth, file);
+            await convert(testFolder + "/" + file, thumbName, { width: thumbnailWidth, height: 250 });
+            console.log("  resizing to " + bigWidth, file);
             await convert(testFolder + "/" + file, testFolder + "-mid/" + file.replace(".png", ".jpg"), { width: bigWidth} );
-        } 
+        }
 
     } catch (err) {
       console.error("Error reading file:", err);
@@ -41,12 +53,11 @@ function convert(inputFile, outputFile, resizeOptions) {
         })
         .toFile(outputFile)
             .then(function(newFileInfo) {
-                console.log("Success");
                 resolve(newFileInfo);
             })
             .catch(function(err) {
-                console.log("Error occured");
+                console.log("== Error during resize!");
                 reject(err);
-            });    
+            });
         });
 }
