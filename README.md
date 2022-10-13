@@ -30,7 +30,9 @@ Dieses Repository generiert meine Familien-Unternehmungen-Seite ("familien-muens
 * Falls man auch deployen will, dann auch die _scripts/config/config.deploy.sh_ anlegen
 * Hugo installieren: https://gohugo.io/
 
-## Generieren der Webseite:
+## Generieren der Webseite
+
+Hinweis: Wenn man *"npm run generate"* aufruft, werden nach und nach alle Screenshots erstellt. Dabei poppt immer ein Browserfenster auf, in dem man **den Cookiehinweis wegklicken kann**, wenn man schnell genug ist. Fünf Sekunden Zeit hat man, theoretisch kann man sich auch noch weiter durchklicken oder zum Ausschnitt scrollen, den man gern auf dem Screenshot haben möchte.
 
 ```bash
     # Ins Unterverzeichnis "scripts" wechseln

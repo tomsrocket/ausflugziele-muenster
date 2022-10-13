@@ -232,6 +232,7 @@ async function loadPage(address, output)
         screenshotApp.fromURL(address, output, {
             width: pageWidth,
             height: pageHeight,
+            waitMilliseconds: 5000
         }, function(){
             console.log("wrote " + output);
             resolve();
