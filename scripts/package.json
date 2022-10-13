@@ -15,7 +15,7 @@
     "generate": "node read-public-google-spreadsheet.js 2000",
     "thumbnails": "node generate-thumbnails.js",
     "build": "cd ..;hugo",
-    "deploy": "cd ..;source config/config.deploy.sh;rsync -avzu ../docs/ $REMOTE"
+    "deploy": ". ./config/config.deploy.sh;rsync -avzu ../docs/ $REMOTE"
   },
   "repository": {
     "type": "git",
