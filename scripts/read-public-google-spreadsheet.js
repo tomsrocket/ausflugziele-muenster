@@ -136,7 +136,7 @@ async function processRow(row) {
     process.stdout.write("#" + lineCounter);
     process.stdout.write(" -> ");
 
-    const title = row[2].replace('"', '\"');
+    const title = row[2];
     const addr = row[4];
     const keywords = row[5].split(", ");
     const date = row[0];
@@ -157,7 +157,7 @@ async function processRow(row) {
     const isoDate = jsDate.toISOString();
 
     const content = `---
-title: "${title}"
+title: "${title.replaceAll('"', '\\"')}"
 date: ${isoDate}
 publishdate: ${isoDate}
 lastmod: ${isoDate}
