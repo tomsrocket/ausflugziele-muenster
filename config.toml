@@ -1,15 +1,15 @@
 baseURL = "/"
-languageCode = "en-us"
+languageCode = "de-de"
 title = "Freizeit-Kompass Münster"
 theme = "ms-theme"
 #theme = "ananke"
 summaryLength = 25
-copyright = "John Doe - All rights reserved"
+copyright = "Thomas Werner - All rights reserved"
 enableEmoji = true
 publishDir = "docs"
 #disqusShortname = "your-shortname-here"
 #googleAnalytics = "UA-1XXXXXXX1-1"
-Paginate=12
+Paginate=15
 [params]
   logo = "/images/logo-monkey.png"
   description ="Ausflugsideen für die ganze Familie"
@@ -31,7 +31,6 @@ Paginate=12
 
 [params.social]
   github = "tomsrocket"
-
   twitter = "toms_rocket"
 
 ## Main Menu
@@ -49,6 +48,10 @@ Paginate=12
     name = "Kategorien"
     weight = 100
     identifier = "tags"
-    url = "/tags"    
+    url = "/tags"
 
+[markup]
+  [markup.goldmark]
+    [markup.goldmark.renderer]
+      unsafe = true
 
