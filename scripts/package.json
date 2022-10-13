@@ -1,21 +1,18 @@
 {
-  "name": "spass-mit-daten",
+  "name": "tomscsv2html",
   "version": "1.0.0",
-  "description": "Dieses Repository enthält den Code für die Open Data Linkliste auf spassmitdaten.de.",
-  "main": "read-google-spreadsheet.js",
+  "description": "Dieses Repository enthält um eine Webseite aus einer CSV Linkliste zu erstellen.",
+  "main": "read-public-google-spreadsheet.js",
   "dependencies": {
-    "fs": "0.0.1-security",
-    "googleapis": "^27.0.0",
-    "md5": "^2.2.1",
-    "node-server-screenshot": "^0.2.1",
-    "sharp": "^0.21.3"
-  },
-  "devDependencies": {
-    "nanogen": "^0.4.2"
+    "md5": "^2.3.0",
+    "node-server-screenshot": "^0.2.4",
+    "csv-parse": "^4.15.3",
+    "follow-redirects": "^1.15.2",
+    "sharp": "^0.31.1"
   },
   "scripts": {
     "dev": "cd ..;hugo serve",
-    "generate": "node read-google-spreadsheet.js;node generate-thumbnails.js",
+    "generate": "node read-public-google-spreadsheet.js",
     "build": "cd ..;hugo"
   },
   "repository": {
@@ -28,5 +25,5 @@
   "bugs": {
     "url": "https://github.com/tomsrocket/spass-mit-daten/issues"
   },
-  "homepage": "https://github.com/tomsrocket/spass-mit-daten#readme"
+  "homepage": "https://github.com/tomsrocket"
 }
