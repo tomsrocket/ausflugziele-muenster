@@ -9,7 +9,7 @@ enableEmoji = true
 publishDir = "docs"
 #disqusShortname = "your-shortname-here"
 #googleAnalytics = "UA-1XXXXXXX1-1"
-Paginate=15
+Paginate=18
 [params]
   logo = "/images/logo-monkey.png"
   description ="Ausflugsideen für die ganze Familie"

@@ -36,7 +36,7 @@
     border: 5px solid;
     text-transform: capitalize;
     color: #00ab6b;
-    white-space: nowrap; 
+    white-space: nowrap;
     display: inline-block;
     margin: 2px 0;
 }
@@ -50,4 +50,35 @@ nav, footer {
 }
 body {
     background: rgba(0, 0, 0, 0) url(/images/bg-stripes-light.png) repeat scroll 0% 0%;
+}
+
+.jumbotron.frontpage-intro {
+    /*background-image: url(/images/sommerrodel-ausschnitt.jpg);
+    background-position: center top;
+    background-size: 100% auto;
+    */
+    background-color:rgba(0,0,0,.7);
+    margin-bottom:0;
+    padding:20pt 0 0 0;
+    margin-bottom:0;text-align:center;
+    max-height:200px;
+    overflow:hidden;
+    white-space: nowrap;
+    border-radius:0;
+    opacity:0.8;
+
+}
+.jumbotron.frontpage-caption {
+    background-color:rgba(0,0,0,.7);;
+    padding: 20pt;
+    color:white;
+    opacity:0.8;
+    border-radius:0;
+    margin-bottom:30pt;
+}
+.jumbotron.frontpage-intro img {
+    height:200px;
+    display: inline;
+    vertical-align: top;
+    float: none;
 }
