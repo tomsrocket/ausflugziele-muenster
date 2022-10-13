@@ -1,7 +1,7 @@
 
 # Quellcode zum Familien-Kompass Münster
 
-Adresse: 
+Adresse:
     https://www.familien-muenster.de
 
 ## Hintergrund
@@ -10,11 +10,11 @@ Ich hatte schon länger die Idee, eine Webseite für Familien in Münster zu mac
 
 Es sollte also am besten ein Nachschlagwerk sein, das Links zu verschiedenen familienrelevanten Themengebieten enthält.
 
-Nachdem ich an der Umsetzung von zwei anderen Projekten beteiligt war (mein-ms.de, spassmitdaten.de) kam mir dann der Geistesblitz, wie ich es am einfachsten umsetzen kann: 
+Nachdem ich an der Umsetzung von zwei anderen Projekten beteiligt war (mein-ms.de, spassmitdaten.de) kam mir dann der Geistesblitz, wie ich es am einfachsten umsetzen kann:
  * Ein Google-Spreadsheet, das die Links enthält
  * Ein Skript, das das Google-Spreadsheet ausliest, und daraus Markdown-Dateien erstellt
  * Ein Website-Generator, der daraus eine statische Webseite erstellt
- 
+
 Für letzteren Punkt kam sehr vieles in Frage, ich habe mich letztendlich für "Hugo" entschieden.
 
 ## TL;DR
@@ -26,32 +26,47 @@ Dieses Repository generiert meine Familien-Unternehmungen-Seite ("familien-muens
 
 ## Setup
 
-* Die Datei _scripts/config/config.json_ anlegen mit der *spreadsheetId*
-* Anleitung befolgen um die Google Spreadsheet API nutzen zu können: https://developers.google.com/sheets/api/quickstart/nodejs
-  * Wichtig evtl.: Umgesetzt wurde es aktuell mit "googleapis@27"
-  * Die Config Dateien credentials.json und token.js müssen kopiert werden nach _scripts/config_
+* Die Datei _scripts/config/config.json_ anlegen mit der *spreadsheetCsvUrl*
+* Falls man auch deployen will, dann auch die _scripts/config/config.deploy.sh_ anlegen
 * Hugo installieren: https://gohugo.io/
 
-## Generieren der Webseite: 
+## Generieren der Webseite:
 
+```bash
+    # Ins Unterverzeichnis "scripts" wechseln
     cd scripts
 
-    # Google Spreadsheet auslesen, Markdownfiles erstellen, Screenshots erzeugen, Bildgrößen optimieren 
+    # Google Spreadsheet auslesen, Markdownfiles erstellen, Screenshots erzeugen
     npm run generate
 
-    # HTML Seiten bauen und hochladen
+    # Bildgrößen optimieren bzw. Thumbnails erstellen
+    npm run thumbnails
+
+    # Statische HTML-Seiten generieren
     npm run build
-    scp -rp docs user@server.tld:~
 
+    # Statische Seiten auf Server hochladen
+    npm run deploy
+```
 
-## Development-Server laufen lassen: 
+## Development-Server laufen lassen:
 
+```bash
     hugo serve
+```
 
-Danach kann man diese Url ausprobieren:  http://localhost:1313/posts/
+Danach kann man diese Url ausprobieren:  http://localhost:1313/
 
 Zu beachten ist, dass das nur mittel gut funktioniert und nach manchen Änderungen (Content-Dateien z.B.) der Server manuell neugestartet werden muss.
 
+## How does it work
+
+Das Skript *read-public-google-spreadsheet.js*, das man mit `npm run generate` laufen lassen kann, tut folgendes:
+
+* CSV-Datei downloaden von der Url die in `config.json` hinterlegt ist
+* Für jede Zeile aus der CSV wird eine Markdown-Datei angelegt im Verzeichnis `/content/posts`
+* Bildschirmfotos der URLs (Spalte 2) erzeugen und ablegen in `/static/images/posts`
+* Dann kann man mit `npm run thumbails` die Thumbnails generieren, die werden dann auch unter /static/images abgelegt.
 
 # Link-Resourcen
 
