@@ -3,7 +3,7 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 	{{ hugo.Generator }}
 	{{ with .Site.Params.logo }}
-	<link rel="icon" href="{{ . | urlize | relURL }}">
+	<link rel="icon" href="/">
 	{{ end }}
 	<title>{{ .Page.Title }} | {{ .Site.Title }}</title>
 	{{ with .Site.Params.meta.description }}
