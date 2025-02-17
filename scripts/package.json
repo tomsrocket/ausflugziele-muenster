@@ -4,11 +4,11 @@
   "description": "Dieses Repository enthält um eine Webseite aus einer CSV Linkliste zu erstellen.",
   "main": "read-public-google-spreadsheet.js",
   "dependencies": {
-    "md5": "^2.3.0",
-    "node-server-screenshot": "^0.2.4",
     "csv-parse": "^4.15.3",
     "follow-redirects": "^1.15.2",
-    "sharp": "^0.31.1"
+    "md5": "^2.3.0",
+    "puppeteer": "^24.2.1",
+    "sharp": "^0.33.5"
   },
   "scripts": {
     "dev": "cd ..;hugo serve",

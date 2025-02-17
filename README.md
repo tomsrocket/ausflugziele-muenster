@@ -28,7 +28,7 @@ Dieses Repository generiert meine Familien-Unternehmungen-Seite ("familien-muens
 
 * Die Datei _scripts/config/config.json_ anlegen mit der *spreadsheetCsvUrl*
 * Falls man auch deployen will, dann auch die _scripts/config/config.deploy.sh_ anlegen
-* Hugo installieren: https://gohugo.io/
+* Hugo installieren: https://gohugo.io/ bzy. _sudo apt install hugo_
 
 ## Generieren der Webseite
 

@@ -5,7 +5,7 @@ const md5 = require('md5');
 const { http, https } = require('follow-redirects');
 const sharp = require('sharp');
 const csvParse = require('csv-parse')
-const screenshotApp = require("node-server-screenshot");
+const puppeteer = require("puppeteer"); // take screenshots
 
 const { promisify } = require('util');
 const readFileAsync = promisify(fs.readFile);
@@ -217,7 +217,6 @@ ${addr}
 }
 
 
-
 /**
  * Take screenshot of page
  * @param {string} address
@@ -225,18 +224,49 @@ ${addr}
  */
 async function loadPage(address, output)
 {
-    console.log("Processing", address);
+    // wait to take the screenshot. So user can close cookie popups
+    const pause = 5000;
+    const wait = async () => {
+        if (pause) {
+        console.log(`⏳ Waiting ${pause}ms…`);
+        await new Promise(resolve => setTimeout(resolve, pause));
+        }
+    };
+    
+    console.log("Processingg", address);
 
     return new Promise(function(resolve, reject) {
 
-        screenshotApp.fromURL(address, output, {
-            width: pageWidth,
-            height: pageHeight,
-            waitMilliseconds: 5000
-        }, function(){
-            console.log("wrote " + output);
-            resolve();
-        });
+        puppeteer
+            .launch({
+                defaultViewport: {
+                    width: pageWidth,
+                    height: pageHeight,
+                },
+                ignoreHTTPSErrors: true,
+                acceptInsecureCerts: true,
+                args: [
+                  "--allow-running-insecure-content",
+                  "--ignore-certificate-errors",
+                  "--ignore-certificate-errors-spki-list",
+                  "--enable-features=NetworkService",
+                ],
+                headless: false
+            })
+            .then(async (browser) => {
+                    const page = await browser.newPage();
+                    await page.setUserAgent('Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/132.0.0.0 Safari/537.36');
+                    await page.goto(address);
+                    await page.emulateMediaFeatures([{
+                        name: 'prefers-color-scheme', value: 'light' }]);
+                      await wait(); // Wait, in case the system preference was dark mode.
+                    await page.screenshot({ path: output });
+                    await browser.close();
+                    console.log("done. wrote " + output);
+                    resolve();
+                }, 
+                function() {console.error("SCREENSHOT FAILED"); reject();}
+            );
     });
 }
 
@@ -248,8 +278,9 @@ async function loadPage(address, output)
  * @param {*} outputFile
  * @param {*} resizeOptions
  */
-async function convert(inputFile, outputFile, resizeOptions) {
-  return new Promise(function(resolve, reject) {
+async function convert(inputFile, outputFile) {
+    const resizeOptions = { width: thumbnailWidth, height: thumbnailheight }
+    return new Promise(function(resolve, reject) {
       sharp(inputFile)
       .resize(resizeOptions)
       .jpeg({
@@ -267,4 +298,6 @@ async function convert(inputFile, outputFile, resizeOptions) {
           });
       });
 }
+
+
 
